@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# imported library file
+*.tgz
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
