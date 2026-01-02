@@ -25,7 +25,8 @@ function App() {
       </div>
 
       <h1>Poly UI Counter</h1>
-      <ui-counter />
+      {/* step and start-count are both optional ... */}
+      <ui-counter step={5} start-count={1000}  />
     </>
   )
 }
