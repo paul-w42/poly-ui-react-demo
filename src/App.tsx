@@ -33,7 +33,6 @@ function App() {
       <ui-button 
         css='color: black; font-weight: bold; 
           font-size: 1.1em; background-color: lightblue;'
-        // label='press me'
         >Press Me
       </ui-button>
 
