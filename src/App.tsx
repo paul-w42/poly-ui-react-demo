@@ -27,11 +27,14 @@ function App() {
       <h1>Poly UI Counter</h1>
       {/* step and start-count are both optional ... */}
       <ui-counter />
+
+      <h1>ui-button</h1>
       
       <ui-button 
-        css='color: black; font-weight: bold; font-size: 1.1em; background-color: lightblue; margin-left: 2em;'
+        css='color: black; font-weight: bold; 
+          font-size: 1.1em; background-color: lightblue;'
         // label='press me'
-        >TEST
+        >Press Me
       </ui-button>
 
     </>
