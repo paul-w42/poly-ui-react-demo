@@ -1,8 +1,15 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Code from './lib/Code';
 
 import './App.css'
+
+const code = `// adding two numbers
+a = 0;
+b = 0;
+console.log('a + b = ' + a + b);
+`
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +42,12 @@ function App() {
           font-size: 1.1em; background-color: lightblue;'
         >Press Me
       </ui-button>
+
+      <Code 
+        code={code} 
+        language='javascript' 
+        className=''
+        />
 
     </>
   )
