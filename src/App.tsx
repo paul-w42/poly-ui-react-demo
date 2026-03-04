@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Code from './lib/Code';
@@ -12,7 +12,25 @@ console.log('a + b = ' + a + b);
 `
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [buttonTestCount, setButtonTestCount] = useState(0)
+
+  // Custom event handler for ButtonTestEvent
+  const handleButtonTestEvent = (event: Event) => {
+    console.log('ButtonTestEvent triggered!', event)
+    setButtonTestCount((prev) => prev + 1)
+  }
+
+  // Set up event listener on mount
+  useEffect(() => {
+    document.addEventListener('ButtonTestEvent', handleButtonTestEvent)
+    
+    // Cleanup listener on unmount
+    return () => {
+      document.removeEventListener('ButtonTestEvent', handleButtonTestEvent)
+    }
+  }, [])
+
 
   return (
     <>
@@ -35,13 +53,18 @@ function App() {
       {/* step and start-count are both optional ... */}
       <ui-counter />
 
-      <h1>ui-button</h1>
+      <h1 className="margin-top">ui-button</h1>
       
       <ui-button 
         css='color: black; font-weight: bold; 
           font-size: 1.1em; background-color: lightblue;'
+        click-event='ButtonTestEvent'
         >Press Me
       </ui-button>
+
+      <div className="buttonCounter">{buttonTestCount}</div>
+
+      <h1 className="margin-top">Code Highlighting</h1>
 
       <Code 
         code={code} 
