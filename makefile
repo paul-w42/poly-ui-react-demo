@@ -1,6 +1,10 @@
 # Variables
 PACKAGE_NAME = poly-ui
 
+# Colors for output
+GREEN = \033[0;32m
+NC = \033[0m
+
 .PHONY: clean dev install
 
 dev:
