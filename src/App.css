@@ -49,6 +49,10 @@ h1 {
   margin: auto;
 }
 
-.margin-top {
+h1 .m-top {
   margin-top: 1.5em;
+}
+
+div .m-top {
+  margin-top: 1em;
 }

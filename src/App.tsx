@@ -53,7 +53,7 @@ function App() {
       {/* step and start-count are both optional ... */}
       <ui-counter />
 
-      <h1 className="margin-top">ui-button</h1>
+      <h1 className="m-top">ui-button</h1>
       
       <ui-button 
         css='color: black; font-weight: bold; 
@@ -62,9 +62,9 @@ function App() {
         >Press Me
       </ui-button>
 
-      <div className="buttonCounter">{buttonTestCount}</div>
+      <div className="buttonCounter m-top">{buttonTestCount}</div>
 
-      <h1 className="margin-top">Code Highlighting</h1>
+      <h1 className="m-top">Code Highlighting</h1>
 
       <Code 
         code={code} 
