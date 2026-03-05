@@ -5,10 +5,6 @@
   text-align: center;
 }
 
-h1 {
-  font-size: 2em;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -44,6 +40,62 @@ h1 {
 .read-the-docs {
   color: #888;
 }
+
+.m-top {
+  margin-top: 2rem;
+}
+
+/* New Styles */
+.main-nav {
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.main-nav button {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.demo-page {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.demo-section {
+  background: #f7f7fa;
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid #d0d1d4;
+  font-size: 0.9em;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+}
+
+.doc-table th, .doc-table td {
+  border: 1px solid #444;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.doc-table th {
+  background-color: #d7d7dd;
+}
+
+.buttonCounter {
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+
 
 .buttonCounter {
   margin: auto;

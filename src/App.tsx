@@ -1,78 +1,40 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Code from './lib/Code';
+import ButtonDemo from './pages/ButtonDemo'
+import CounterDemo from './pages/CounterDemo'
 
 import './App.css'
 
-const code = `// adding two numbers
-a = 0;
-b = 0;
-console.log('a + b = ' + a + b);
-`
-
 function App() {
-  const [count, setCount] = useState(0);
-  const [buttonTestCount, setButtonTestCount] = useState(0)
-
-  // Custom event handler for ButtonTestEvent
-  const handleButtonTestEvent = (event: Event) => {
-    console.log('ButtonTestEvent triggered!', event)
-    setButtonTestCount((prev) => prev + 1)
-  }
-
-  // Set up event listener on mount
-  useEffect(() => {
-    document.addEventListener('ButtonTestEvent', handleButtonTestEvent)
-    
-    // Cleanup listener on unmount
-    return () => {
-      document.removeEventListener('ButtonTestEvent', handleButtonTestEvent)
-    }
-  }, [])
-
+  const [currentPage, setCurrentPage] = useState<'home' | 'button' | 'counter'>('home');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Default React Counter</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+    <div className="app-container">
+      <nav className="main-nav">
+        <button onClick={() => setCurrentPage('home')}>Home</button>
+        <button onClick={() => setCurrentPage('button')}>ui-button Demo</button>
+        <button onClick={() => setCurrentPage('counter')}>ui-counter Demo</button>
+      </nav>
 
-      <h1>Poly UI Counter</h1>
-      {/* step and start-count are both optional ... */}
-      <ui-counter />
+      {currentPage === 'home' && (
+        <>
+          <div>
+            <a href="https://vite.dev" target="_blank">
+              <img src={viteLogo} className="logo" alt="Vite logo" />
+            </a>
+            <a href="https://react.dev" target="_blank">
+              <img src={reactLogo} className="logo react" alt="React logo" />
+            </a>
+          </div>
+          <h1>Poly UI Demo App</h1>
+          <p>Select a component demo from the navigation above.</p>
+        </>
+      )}
 
-      <h1 className="m-top">ui-button</h1>
-      
-      <ui-button 
-        css='color: black; font-weight: bold; 
-          font-size: 1.1em; background-color: lightblue;'
-        click-event='ButtonTestEvent'
-        >Press Me
-      </ui-button>
-
-      <div className="buttonCounter m-top">{buttonTestCount}</div>
-
-      <h1 className="m-top">Code Highlighting</h1>
-
-      <Code 
-        code={code} 
-        language='javascript' 
-        className=''
-        />
-
-    </>
+      {currentPage === 'button' && <ButtonDemo />}
+      {currentPage === 'counter' && <CounterDemo />}
+    </div>
   )
 }
 
