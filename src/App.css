@@ -1,84 +1,156 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #333;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #646cff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.m-top {
-  margin-top: 2rem;
-}
-
-/* New Styles */
-.main-nav {
-  margin-bottom: 3rem;
+/* Base Layout (Mobile First) */
+.app-layout {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
 }
 
-.main-nav button {
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.side-nav button {
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
   font-weight: 500;
+  text-align: center;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.demo-page {
-  text-align: left;
+.side-nav button:hover {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.side-nav button:active {
+  transform: translateY(0);
+}
+
+.side-nav button.active {
+  background-color: #646cff;
+  color: white;
+  border-color: #646cff;
+  box-shadow: 0 4px 6px -1px rgba(100, 108, 255, 0.2), 0 2px 4px -1px rgba(100, 108, 255, 0.1);
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0; /* Ensures content can't push beyond container boundaries */
+}
+
+.home-content {
   max-width: 800px;
   margin: 0 auto;
 }
 
+.description-section {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.description-section h2 {
+  color: #646cff;
+  margin-top: 2rem;
+}
+
+.tech-logos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.logo {
+  height: 4rem;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Desktop Layout (Large Displays) */
+@media (min-width: 768px) {
+  .app-layout {
+    flex-direction: row;
+    padding: 2rem;
+    align-items: flex-start;
+  }
+
+  .side-nav {
+    width: 240px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .main-content {
+    padding-left: 2rem;
+    border-left: 1px solid #333;
+    overflow-x: auto;
+  }
+}
+
+/* Component Specific Utility Classes */
+.m-top {
+  margin-top: 2rem;
+}
+
+.demo-page {
+  text-align: left;
+}
+
 .demo-section {
-  background: #f7f7fa;
+  background: #fbfbfb;
   padding: 1.5rem;
-  border-radius: 4px;
-  border: 1px solid #d0d1d4;
-  font-size: 0.9em;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
 .doc-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
-  background-color: #ffffff;
 }
 
 .doc-table th, .doc-table td {
@@ -88,23 +160,5 @@
 }
 
 .doc-table th {
-  background-color: #d7d7dd;
-}
-
-.buttonCounter {
-  font-family: monospace;
-  font-size: 1.2rem;
-}
-
-
-.buttonCounter {
-  margin: auto;
-}
-
-h1 .m-top {
-  margin-top: 1.5em;
-}
-
-div .m-top {
-  margin-top: 1em;
+  background-color: #1a1a1a;
 }
