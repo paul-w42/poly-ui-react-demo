@@ -12,7 +12,8 @@ function App() {
   return (
     <div className="app-wrapper">
       <header className="app-header">
-        <h1>Poly UI Demo App</h1>
+        <h1>Poly UI in React</h1>
+        <h2>The freedom to use the framework you love</h2>
       </header>
 
       <div className="app-layout">
@@ -37,7 +38,7 @@ function App() {
           </button>
         </nav>
 
-        <main className="main-content">
+        <main className="main-content" >
           {currentPage === 'home' && (
             <div className="home-content">
               <section className="description-section">
@@ -56,7 +57,7 @@ function App() {
                   environments, providing a consistent UI experience across diverse platforms.
                 </p>
               </section>
-
+{/* 
               <div className="tech-logos">
                 <a href="https://vite.dev" target="_blank">
                   <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -64,7 +65,7 @@ function App() {
                 <a href="https://react.dev" target="_blank">
                   <img src={reactLogo} className="logo react" alt="React logo" />
                 </a>
-              </div>
+              </div> */}
             </div>
           )}
 

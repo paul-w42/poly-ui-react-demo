@@ -1,5 +1,8 @@
 #root {
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 }
@@ -7,11 +10,11 @@
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  flex: 1;
 }
 
 .app-header {
-  background-color: #1a1a1a;
+  background-color: #646cff;
   padding: 1rem 2rem;
   border-bottom: 1px solid #333;
   text-align: center;
@@ -20,13 +23,20 @@
 .app-header h1 {
   margin: 0;
   font-size: 1.8rem;
-  color: #646cff;
+  color: #ffffff;
+}
+
+.app-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #ffffff;
 }
 
 /* Base Layout (Mobile First) */
 .app-layout {
   display: flex;
   flex-direction: column;
+  flex: 1;
   padding: 1rem;
   gap: 2rem;
 }
@@ -114,19 +124,17 @@
   .app-layout {
     flex-direction: row;
     padding: 2rem;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .side-nav {
     width: 240px;
     flex-shrink: 0;
-    position: sticky;
-    top: 2rem;
   }
 
   .main-content {
     padding-left: 2rem;
-    border-left: 1px solid #333;
+    border-left: 1px solid #c7c7c7;
     overflow-x: auto;
   }
 }
@@ -160,5 +168,5 @@
 }
 
 .doc-table th {
-  background-color: #1a1a1a;
+  background-color: #e4e4e4;
 }
