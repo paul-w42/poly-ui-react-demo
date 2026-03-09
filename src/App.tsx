@@ -60,7 +60,7 @@ function App() {
                 <p>
                   Poly UI is a versatile custom elements library built with Svelte but 
                   compiled to standard Web Components. This architecture allows the components 
-                  to be used in any framework—React, Angular, Vue—or even in vanilla HTML/JS 
+                  to be used in any framework — React, Angular, Vue — or even in vanilla HTML/JS 
                   environments, providing a consistent UI experience across diverse platforms.
                 </p>
               </section>
