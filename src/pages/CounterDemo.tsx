@@ -10,17 +10,17 @@ export default function CounterDemo() {
       <h1>ui-counter Demo</h1>
       
       <section className="demo-section">
-        <h2>1. Demonstration</h2>
+        <h2>Demonstration</h2>
         <ui-counter start-count={10} step={5} />
       </section>
 
       <section className="demo-section m-top">
-        <h2>2. Code Example</h2>
+        <h2>Code Example</h2>
         <Code code={counterCode} language="html" />
       </section>
 
       <section className="demo-section m-top">
-        <h2>3. Documentation</h2>
+        <h2>Documentation</h2>
         <table className="doc-table">
           <thead>
             <tr>

@@ -3,11 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import ButtonDemo from './pages/ButtonDemo'
 import CounterDemo from './pages/CounterDemo'
+import CodeDemo from './pages/CodeDemo'
 
 import './App.css'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'button' | 'counter'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'button' | 'counter' | 'code'>('home');
 
   return (
     <div className="app-wrapper">
@@ -36,9 +37,15 @@ function App() {
           >
             ui-counter
           </button>
+          <button 
+            className={currentPage === 'code' ? 'active' : ''} 
+            onClick={() => setCurrentPage('code')}
+          >
+            ui-code-highlight
+          </button>
         </nav>
 
-        <main className="main-content" >
+        <main className="main-content">
           {currentPage === 'home' && (
             <div className="home-content">
               <section className="description-section">
@@ -57,20 +64,12 @@ function App() {
                   environments, providing a consistent UI experience across diverse platforms.
                 </p>
               </section>
-{/* 
-              <div className="tech-logos">
-                <a href="https://vite.dev" target="_blank">
-                  <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                  <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-              </div> */}
             </div>
           )}
 
           {currentPage === 'button' && <ButtonDemo />}
           {currentPage === 'counter' && <CounterDemo />}
+          {currentPage === 'code' && <CodeDemo />}
         </main>
       </div>
     </div>
